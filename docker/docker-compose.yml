@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  webapp:
+    image: buddyingdevelopment/php:5.6-apache
+    container_name: slimauth-webapp
+    working_dir: /var/www/vhosts/slim/htdocs
+    volumes:
+      - ../htdocs:/var/www/vhosts/slim/htdocs:cached
+      - ./setup/vhosts.conf:/etc/httpd/conf.d/vhosts.conf
+    ports:
+      - '80:80'
+    environment:
+      - PHP_XDEBUG=off
+      - COMPOSER_ALLOW_SUPERUSER=1

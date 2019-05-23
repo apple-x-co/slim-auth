@@ -1,0 +1,7 @@
+.env
+/vendor/
+/logs/*
+!/logs/README.md
+/cache/*
+
+!.gitkeep
